@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.barto.stepcounterbart.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="166dp"
+        android:layout_toEndOf="@+id/textView4"
+        android:fontFamily="@font/coustard"
+        android:text="Today Steps"
+        android:textAlignment="textStart"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/step_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/shoes"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="55dp"
+        android:fontFamily="@font/coustard"
+        android:text="..."
+        android:textAlignment="center"
+        android:textSize="30sp"
+        />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/shoes"
+        android:layout_below="@+id/imageView3"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/coustard"
+        android:text="Elapsed Time"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/elapsed_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/calories"
+        android:layout_alignBottom="@+id/calories"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_marginStart="26dp"
+        android:fontFamily="@font/coustard"
+        android:text="..."
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignEnd="@+id/textView2"
+        android:fontFamily="@font/coustard"
+        android:text="Calories Burned"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/chilometers"
+        android:layout_alignBottom="@+id/chilometers"
+        android:layout_alignEnd="@+id/imageView4"
+        android:fontFamily="@font/coustard"
+        android:text="..."
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/Km "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignStart="@+id/distance"
+        android:fontFamily="@font/coustard"
+        android:text="Km"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/chilometers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Km "
+        android:layout_below="@+id/Km "
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/coustard"
+        android:text="..."
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/shoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_marginEnd="54dp"
+        android:layout_toStartOf="@+id/step_update"
+        app:srcCompat="@drawable/shoes" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/shoes"
+        android:layout_marginEnd="13dp"
+        android:layout_marginTop="68dp"
+        android:layout_toStartOf="@+id/shoes"
+        app:srcCompat="@drawable/time" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/step_update"
+        android:layout_alignTop="@+id/imageView3"
+        app:srcCompat="@drawable/calories" />
+
+    <ImageView
+        android:id="@+id/distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/imageView4"
+        android:layout_marginEnd="29dp"
+        app:srcCompat="@drawable/distance" />
+
+</RelativeLayout>

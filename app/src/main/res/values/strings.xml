@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MyFirstAppStepCounter</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">Map</string>
+
+    <integer-array name="img_id_arr">
+        <item>@layout/first_frag</item>
+        <item>@layout/sec_frag</item>
+        <item>@layout/third_frag</item>
+    </integer-array>
+    <string name="title_activity_maps2">Map</string>
+</resources>

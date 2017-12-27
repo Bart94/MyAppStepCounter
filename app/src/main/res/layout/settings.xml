@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="49dp"
+        android:fontFamily="@font/coustard"
+        android:text="Nome"
+        android:textAlignment="textStart"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/Surname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Name"
+        android:layout_below="@+id/Name"
+        android:layout_marginTop="38dp"
+        android:fontFamily="@font/coustard"
+        android:text="Cognome"
+        android:textAlignment="textStart"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/Sesso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Surname"
+        android:layout_below="@+id/Surname"
+        android:layout_marginTop="46dp"
+        android:fontFamily="@font/coustard"
+        android:text="Sesso"
+        android:textAlignment="textStart"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/Birth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Sesso"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/coustard"
+        android:text="Data di Nascita"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/Weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Birth"
+        android:layout_below="@+id/Birth"
+        android:layout_marginTop="47dp"
+        android:fontFamily="@font/coustard"
+        android:text="Peso"
+        android:textAlignment="textStart"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/Height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Weight"
+        android:layout_below="@+id/Weight"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/coustard"
+        android:text="Altezza"
+        android:textAlignment="textStart"
+        android:textSize="18sp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/surnameText"
+        android:layout_marginStart="-70dp"
+        android:layout_marginTop="30dp"
+        android:layout_toEndOf="@id/weightText"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/coustard"
+            android:text="Uomo"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/radioFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:fontFamily="@font/coustard"
+            android:text="Donna"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/surnameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Surname"
+        android:layout_alignBottom="@+id/Surname"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/Surname"
+        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:ems="10"
+        android:fontFamily="@font/coustard"
+        android:inputType="textCapWords" />
+
+    <EditText
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Name"
+        android:layout_alignBottom="@+id/Name"
+        android:layout_alignStart="@+id/weightText"
+        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:ems="10"
+        android:fontFamily="@font/coustard"
+        android:inputType="textCapWords" />
+
+    <EditText
+        android:id="@+id/weightText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView14"
+        android:layout_alignBottom="@+id/textView14"
+        android:layout_toEndOf="@+id/Height"
+        android:ems="10"
+        android:fontFamily="@font/coustard"
+        android:inputType="number"
+        android:maxLength="3" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Weight"
+        android:layout_alignBottom="@+id/Weight"
+        android:layout_toEndOf="@+id/heightText"
+        android:fontFamily="@font/coustard"
+        android:text="Kg"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/heightText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Height"
+        android:layout_alignBottom="@+id/Height"
+        android:layout_toEndOf="@+id/Surname"
+        android:ems="10"
+        android:fontFamily="@font/coustard"
+        android:inputType="number"
+        android:maxLength="3" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/heightText"
+        android:layout_alignBottom="@+id/heightText"
+        android:layout_toEndOf="@+id/textView14"
+        android:fontFamily="@font/coustard"
+        android:text="cm"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/birthText"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Birth"
+        android:layout_alignBottom="@+id/Birth"
+        android:layout_marginStart="17dp"
+        android:layout_toEndOf="@+id/Birth"
+        android:ems="10"
+        android:fontFamily="@font/coustard"
+        android:inputType="number" />
+
+   <!-- <Button
+        android:id="@+id/confirmButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/nameText"
+        android:layout_below="@+id/heightText"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/coustard"
+        android:text="Conferma" /> -->
+
+    <com.dd.processbutton.iml.ActionProcessButton
+        android:id="@+id/btnSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heightText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/coustard"
+        android:text="Confirm"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        custom:pb_colorComplete="#009688"
+        custom:pb_colorNormal="@color/colorPrimary"
+        custom:pb_colorPressed="@color/colorPrimaryDark"
+        custom:pb_colorProgress="@color/purple_progress"
+        custom:pb_textComplete="Success"
+        custom:pb_textProgress="Uploading" />
+
+</RelativeLayout>

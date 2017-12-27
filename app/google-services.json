@@ -1,0 +1,102 @@
+{
+  "project_info": {
+    "project_number": "236951010180",
+    "firebase_url": "https://myfirstappstepcounter.firebaseio.com",
+    "project_id": "myfirstappstepcounter",
+    "storage_bucket": "myfirstappstepcounter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236951010180:android:636b54fc1a9b0977",
+        "android_client_info": {
+          "package_name": "com.example.bcoccaro.myfirstappstepcounter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236951010180-h9o56p0na1f0jdbn2e4vlifv3ecr15s2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bcoccaro.myfirstappstepcounter",
+            "certificate_hash": "a593087eeeb48161bb6dd02ebc198dfcadd2dd98"
+          }
+        },
+        {
+          "client_id": "236951010180-pq6ku5far99od36pk93eadvmi0n5f94r.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "236951010180-kjn2psf5r2m1kq25unj1j2qo8nisdcu6.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "236951010180-qsitr3ftqkfo18iins9bp23f4jvefpph.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bcoccaro.myfirstappstepcounter",
+            "certificate_hash": "f3462c64aa534be281cb3c46825d5e7bd9045a02"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAr_o9GH_chmrGovlqsu0PS3OdGR3bY--0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236951010180-pq6ku5far99od36pk93eadvmi0n5f94r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236951010180:android:d64fb2859367b7d2",
+        "android_client_info": {
+          "package_name": "com.example.barto.stepcounterbart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236951010180-pq6ku5far99od36pk93eadvmi0n5f94r.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "236951010180-kjn2psf5r2m1kq25unj1j2qo8nisdcu6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAr_o9GH_chmrGovlqsu0PS3OdGR3bY--0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
