@@ -45,7 +45,7 @@ public class Stats extends AppCompatActivity implements DatePickerDialog.OnDateS
 
         Spinner spinner = findViewById(R.id.spinnerId);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, new String[]{"Last Week", "Last Month", "Custom"});
+                android.R.layout.simple_spinner_item, new String[]{"7 giorni", " 30 giorni", "Personalizzata"});
 
         spinner.setAdapter(arrayAdapter);
 
@@ -125,7 +125,7 @@ public class Stats extends AppCompatActivity implements DatePickerDialog.OnDateS
                                         SimpleDateFormat format1 = new SimpleDateFormat("dd-MM-yyyy");
                                         String formatDate1 = format1.format(startDate);
                                         String formatDate2 = format1.format(endDate);
-                                        graph.setTitle("From: " + formatDate1 + "     To: " + formatDate2);
+                                        graph.setTitle("Da: " + formatDate1 + "     A: " + formatDate2);
                                     }
                                 }, 1000);
 
@@ -216,7 +216,7 @@ public class Stats extends AppCompatActivity implements DatePickerDialog.OnDateS
         String date4 = format1.format(date3);
 
 
-        graph.setTitle("From: " + date4 + "     To: " + date1);
+        graph.setTitle("Da: " + date4 + "     A: " + date1);
         graph.addSeries(series);
         graph.getGridLabelRenderer().setNumVerticalLabels(6);
         if (array.size() > 15) {
@@ -262,7 +262,7 @@ public class Stats extends AppCompatActivity implements DatePickerDialog.OnDateS
         String date4 = format1.format(date3);
 
 
-        graph.setTitle("From: " + date4 + "     To: " + date1);
+        graph.setTitle("Da: " + date4 + "     A: " + date1);
         series.setDrawDataPoints(true);
         series.setAnimated(true);
         graph.addSeries(series);

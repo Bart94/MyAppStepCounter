@@ -34,6 +34,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
+import android.widget.SeekBar;
+import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -55,6 +58,9 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import at.grabner.circleprogress.CircleProgressView;
+import at.grabner.circleprogress.Direction;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final int REQUEST_OAUTH = 1;
@@ -63,6 +69,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private boolean authInProgress = false;
     private GoogleApiClient mClient = null;
     TextView tmp;
+
+    CircleProgressView mCircleView;
+    Switch mSwitchSpin;
+    Switch mSwitchShowUnit;
+    SeekBar mSeekBar;
+    SeekBar mSeekBarSpinnerLength;
+    Boolean mShowUnit = true;
+    Spinner mSpinner;
 
     //OnCreate
     @Override
@@ -363,6 +377,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             new StepCounter(MainActivity.this, mClient).stepsDailyDelta();
             new StepCounter(MainActivity.this, mClient).stepsThisWeek();
             doOnStart();
+            circleProgressBar();
         }
     };
 
@@ -514,7 +529,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View v) {
                 new LovelyTextInputDialog(MainActivity.this)
                         .setTopColorRes(R.color.colorPrimary)
-                        .setTitle("Inserisci Altezza:")
+                        .setTitle("Inserisci Altezza (cm): ")
                         .setIcon(R.drawable.ic_tape_white)
                         .setInputFilter("Error! Inserisci un valore in cm.", new LovelyTextInputDialog.TextFilter() {
                             @Override
@@ -529,6 +544,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 p.setHeight(text);
                                 saveUpdate(p);
                                 new FirebaseDb(getApplicationContext()).setNode(FirebaseDatabase.getInstance().getReference(), p);
+                                actionMenu.close(true);
                             }
                         })
                         .show();
@@ -540,7 +556,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View v) {
                 new LovelyTextInputDialog(MainActivity.this)
                         .setTopColorRes(R.color.colorPrimary)
-                        .setTitle("Inserisci Peso:")
+                        .setTitle("Inserisci Peso (Kg):")
                         .setIcon(R.drawable.ic_weight_white)
                         .setInputFilter("Error! Inserisci un valore in Kg.", new LovelyTextInputDialog.TextFilter() {
                             @Override
@@ -555,6 +571,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 p.setWeight(text);
                                 saveUpdate(p);
                                 new FirebaseDb(getApplicationContext()).setNode(FirebaseDatabase.getInstance().getReference(), p);
+                                actionMenu.close(true);
                             }
                         })
                         .show();
@@ -566,7 +583,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View v) {
                 new LovelyTextInputDialog(MainActivity.this)
                         .setTopColorRes(R.color.colorPrimary)
-                        .setTitle("Inserisci Obiettivo:")
+                        .setTitle("Inserisci Obiettivo (passi):")
                         .setIcon(R.drawable.ic_target_white)
                         .setInputFilter("Error! Inserisci un numero valido.", new LovelyTextInputDialog.TextFilter() {
                             @Override
@@ -579,10 +596,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             public void onTextInputConfirmed(String text) {
                                 SharedPreferences mPref = getApplicationContext().getSharedPreferences("TargetSteps", MODE_PRIVATE);
                                 mPref.edit().putString("target", text).apply();
+                                circleProgressBar();
+                                actionMenu.close(true);
                             }
                         })
                         .show();
             }
         });
+    }
+
+    public void circleProgressBar(){
+        mCircleView = (CircleProgressView) findViewById(R.id.circleView);
+        SharedPreferences mPref = getApplicationContext().getSharedPreferences("TargetSteps", MODE_PRIVATE);
+        mCircleView.setMaxValue(Float.parseFloat(mPref.getString("target", "10000")));
+        SharedPreferences mPref1 = getSharedPreferences("Steps", MODE_PRIVATE);
+        mCircleView.setValueAnimated(Float.parseFloat(mPref1.getString("step", "0")));
+        mCircleView.setDirection(Direction.CW);
     }
 }

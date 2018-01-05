@@ -32,7 +32,7 @@ public class DeltaFragment extends Fragment {
         listView = v.findViewById(R.id.listViewThird);
         textView = v.findViewById(R.id.positionThird);
 
-        title.setText("Delta last two days");
+        title.setText("Variazione rispetto a Ieri");
 
         Date currentLocalTime = Calendar.getInstance().getTime();
         DateFormat date = new SimpleDateFormat("HH:mm");

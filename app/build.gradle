@@ -39,6 +39,7 @@ dependencies {
     compile 'com.github.dmytrodanylyk.android-process-button:library:1.0.4'
     compile 'com.oguzdev:CircularFloatingActionMenu:1.0.2'
     compile 'com.yarolegovich:lovely-dialog:1.0.7'
+    compile 'com.github.jakob-grabner:Circle-Progress-View:v1.3'
 }
 
 

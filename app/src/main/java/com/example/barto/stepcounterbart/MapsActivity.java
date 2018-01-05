@@ -77,9 +77,9 @@ public class MapsActivity extends FragmentActivity implements
         if (!CheckGpsStatus()){
             AlertDialog.Builder miaAlert = new AlertDialog.Builder(this);
             miaAlert.setTitle("Attenzione!");
-            miaAlert.setMessage("Enable Gps Location!");
+            miaAlert.setMessage("Abilita Gps!");
             miaAlert.setCancelable(false);
-            miaAlert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            miaAlert.setPositiveButton("Vai", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
                 }

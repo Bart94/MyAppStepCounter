@@ -38,7 +38,7 @@
         android:layout_alignStart="@+id/graph"
         android:layout_alignTop="@+id/spinnerId"
         android:fontFamily="@font/coustard"
-        android:text="Start Date"
+        android:text="Data Inizio"
         android:textSize="18sp" />
 
     <TextView
@@ -48,7 +48,7 @@
         android:layout_above="@+id/editTextStartDate"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/coustard"
-        android:text="End Date"
+        android:text="Data Fine"
         android:textSize="18sp" />
 
     <EditText

@@ -81,7 +81,7 @@ public class FirebaseDb {
                 Collections.reverse(array);
                 int tmp = array.indexOf("Utente: " + p.getName() + " - " + "Passi: " + p.getSteps());
 
-                String tmp1 = "Your position: " + (tmp + 1) + "/" + array.size();
+                String tmp1 = "Posizione: " + (tmp + 1) + "/" + array.size();
                 textView.setText(tmp1);
 
                 String[] list = new String[array.size()];
@@ -131,7 +131,7 @@ public class FirebaseDb {
                 Collections.reverse(array);
                 Collections.reverse(values);
 
-                String tmp1 = "Your position: " + (array.size() - tmp + 1) + "/" + array.size();
+                String tmp1 = "Posizione: " + (array.size() - tmp + 1) + "/" + array.size();
                 textView.setText(tmp1);
 
                 String[] list = new String[array.size()];
@@ -190,7 +190,7 @@ public class FirebaseDb {
                 Collections.reverse(array);
                 Collections.reverse(values);
 
-                String tmp1 = "Your position: " + (array.size() - tmp + 1) + "/" + array.size();
+                String tmp1 = "Posizione: " + (array.size() - tmp + 1) + "/" + array.size();
                 textView.setText(tmp1);
 
                 String[] list = new String[array.size()];
