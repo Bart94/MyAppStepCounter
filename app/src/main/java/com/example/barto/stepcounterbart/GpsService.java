@@ -50,7 +50,7 @@ public class GpsService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         Timer t = new Timer();
-        t.schedule(looper(), 100, 1000 * 60 * 5);
+        t.schedule(looper(), 100, 1000 * 60);
         return START_STICKY;
     }
 
@@ -288,23 +288,23 @@ public class GpsService extends Service {
                                     tmplatitude = tmp.get(tmp.size() - 1).latitude;
                                     tmplongitude = tmp.get(tmp.size() - 1).longitude;
 
-                                    // if distance > 0.2 miles (300 meters) we take locations
+                                    // if distance > 0.003 miles (4 meters) we take locations
                                     float[] distance = new float[1];
                                     Location.distanceBetween(tmplatitude, tmplongitude, location.getLatitude(), location.getLongitude(), distance);
                                     //distance(tmplatitude, tmplongitude, location.getLatitude(), location.getLongitude())
-                                    if ((distance[0] > 0.2) || (distance(tmplatitude, tmplongitude, location.getLatitude(), location.getLongitude()) > 0.2)) {
+                                    if ((distance[0] > 0.003) || (distance(tmplatitude, tmplongitude, location.getLatitude(), location.getLongitude()) > 0.2)) {
                                         points.add(myPosition);
                                         Log.e("myPos", myPosition.toString());
                                         Log.e("arraySize", String.valueOf(points.size()));
                                         pos.setList(points);
                                         saveData(pos);
                                     }
-                                } else {
+                                } /*else {
                                     points.add(myPosition);
                                     Log.e("myPos", myPosition.toString());
                                     pos.setList(points);
                                     saveData(pos);
-                                }
+                                }*/
                             }
                         }
                     });
