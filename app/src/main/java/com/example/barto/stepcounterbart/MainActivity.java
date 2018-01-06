@@ -342,9 +342,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //TimeElapsed
         long millis = Integer.parseInt(steps) * 746;
         @SuppressLint("DefaultLocale")
-        String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millis),
-                TimeUnit.MILLISECONDS.toMinutes(millis) % TimeUnit.HOURS.toMinutes(1),
-                TimeUnit.MILLISECONDS.toSeconds(millis) % TimeUnit.MINUTES.toSeconds(1));
+        String hms = String.valueOf(TimeUnit.MILLISECONDS.toMinutes(millis));
         TextView time = findViewById(R.id.elapsed_time);
         animationText(time);
         time.setText(hms);

@@ -104,9 +104,22 @@ public class Steps extends Service {
                 notify_builder.setSmallIcon(R.mipmap.ic_launcher);
 
                 notify_builder.setContentTitle("Passi Totali: " + mPref.getString("step", "0"));
-                notify_builder.setContentText("Alle " + localTime + " eri al " + Math.round(division) + "% del tuo obiettivo giornaliero!");
-                notify_builder.setOngoing(true);
+                notify_builder.setContentText("Sei al " + Math.round(division) + "% del tuo obiettivo giornaliero.");
 
+                Calendar c = Calendar.getInstance();
+                int hours = c.get(Calendar.HOUR_OF_DAY);
+
+                if(division >= 90){
+                    notify_builder.setContentText("Sei al " + Math.round(division) + "% del tuo obiettivo giornaliero. Ultimo sforzo!");
+                }
+                if(division >= 100){
+                    notify_builder.setContentText("Obiettivo giornaliero raggiunto. Complimenti!");
+                }
+                if(hours > 10 && division <= 30){
+                    notify_builder.setContentText("Sei al " + Math.round(division) + "% del tuo obiettivo giornaliero. Camminiamo?");
+                }
+
+                notify_builder.setOngoing(true);
                 startForeground(1, notify_builder.build());
             }
 

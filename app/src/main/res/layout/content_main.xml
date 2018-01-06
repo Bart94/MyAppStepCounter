@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/circleView"
         android:layout_centerVertical="true"
+        android:layout_marginEnd="15dp"
         android:fontFamily="@font/coustard"
         android:text="Passi Totali"
         android:textAlignment="textStart"
@@ -37,11 +38,11 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/shoes"
-        android:layout_below="@+id/imageView3"
-        android:layout_marginTop="20dp"
+        android:layout_alignStart="@+id/imageView3"
+        android:layout_below="@+id/elapsed_time"
+        android:layout_marginTop="18dp"
         android:fontFamily="@font/coustard"
-        android:text="Camminata"
+        android:text="Min"
         android:textAlignment="center"
         android:textSize="18sp" />
 
@@ -49,13 +50,12 @@
         android:id="@+id/elapsed_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView4"
-        android:layout_below="@+id/textView3"
-        android:layout_marginEnd="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_alignEnd="@+id/imageView3"
+        android:layout_below="@+id/imageView3"
+        android:layout_marginTop="17dp"
         android:fontFamily="@font/coustard"
         android:text="..."
-        android:textAlignment="textEnd"
+        android:textAlignment="center"
         android:textSize="18sp" />
 
     <TextView
@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/elapsed_time"
         android:layout_alignBottom="@+id/elapsed_time"
-        android:layout_alignEnd="@+id/textView3"
+        android:layout_alignStart="@+id/imageView4"
         android:fontFamily="@font/coustard"
         android:text="..."
         android:textAlignment="textEnd"
@@ -129,8 +129,8 @@
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView4"
-        android:layout_toEndOf="@+id/step_update"
+        android:layout_alignTop="@+id/imageView3"
+        android:layout_toEndOf="@+id/shoes"
         app:srcCompat="@drawable/calories" />
 
     <at.grabner.circleprogress.CircleProgressView
@@ -150,7 +150,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/imageView4"
-        android:layout_marginStart="33dp"
         android:layout_toEndOf="@+id/textView2"
         app:srcCompat="@drawable/distance" />
 
