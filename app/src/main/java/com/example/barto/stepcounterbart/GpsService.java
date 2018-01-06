@@ -282,7 +282,7 @@ public class GpsService extends Service {
                                 double tmplatitude;
                                 double tmplongitude;
 
-                                Log.e("Gelel", "sahsa");
+                                //Log.e("Gelel", "sahsa");
 
                                 if (tmp.size() >= 1) {
                                     tmplatitude = tmp.get(tmp.size() - 1).latitude;
@@ -294,17 +294,17 @@ public class GpsService extends Service {
                                     //distance(tmplatitude, tmplongitude, location.getLatitude(), location.getLongitude())
                                     if ((distance[0] > 0.003) || (distance(tmplatitude, tmplongitude, location.getLatitude(), location.getLongitude()) > 0.2)) {
                                         points.add(myPosition);
-                                        Log.e("myPos", myPosition.toString());
-                                        Log.e("arraySize", String.valueOf(points.size()));
+                                        //Log.e("myPos", myPosition.toString());
+                                        //Log.e("arraySize", String.valueOf(points.size()));
                                         pos.setList(points);
                                         saveData(pos);
                                     }
-                                } /*else {
+                                }else {
                                     points.add(myPosition);
-                                    Log.e("myPos", myPosition.toString());
+                                    //Log.e("myPos", myPosition.toString());
                                     pos.setList(points);
                                     saveData(pos);
-                                }*/
+                                }
                             }
                         }
                     });
