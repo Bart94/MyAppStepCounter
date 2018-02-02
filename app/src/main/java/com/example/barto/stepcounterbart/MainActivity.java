@@ -23,6 +23,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
@@ -556,10 +557,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .setTopColorRes(R.color.colorPrimary)
                         .setTitle("Inserisci Peso (Kg):")
                         .setIcon(R.drawable.ic_weight_white)
+                        .setInputType(InputType.TYPE_CLASS_NUMBER|InputType.TYPE_NUMBER_FLAG_DECIMAL)
                         .setInputFilter("Error! Inserisci un valore in Kg.", new LovelyTextInputDialog.TextFilter() {
                             @Override
                             public boolean check(String text) {
-                                return (text.matches("[0-9]+") && text.length() > 0 && text.length() < 4);
+                                return (text.length() > 1 && text.length() < 5);
                             }
                         })
                         .setConfirmButton(android.R.string.ok, new LovelyTextInputDialog.OnTextInputConfirmListener() {

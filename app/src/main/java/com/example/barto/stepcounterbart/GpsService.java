@@ -242,7 +242,7 @@ public class GpsService extends Service {
         //Log.e("Hours", String.valueOf(hours));
         int minutes = c.get(Calendar.MINUTE);
         //Log.e("Hours", String.valueOf(minutes));
-        if (hours < 1 && minutes < 6) {
+        if (hours < 1 && minutes < 7) {
             SharedPreferences tmpPerson = getSharedPreferences("Temp", MODE_PRIVATE);
             tmpPerson.edit().clear().apply();
         }

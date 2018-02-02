@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:id="@+id/relativeLayout"
+    android:layout_alignParentBottom="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -142,8 +144,8 @@
         android:layout_toEndOf="@+id/Height"
         android:ems="10"
         android:fontFamily="@font/coustard"
-        android:inputType="number"
-        android:maxLength="3" />
+        android:inputType="number|numberSigned|numberDecimal"
+        android:maxLength="5" />
 
     <TextView
         android:id="@+id/textView14"
@@ -191,15 +193,15 @@
         android:fontFamily="@font/coustard"
         android:inputType="number" />
 
-   <!-- <Button
-        android:id="@+id/confirmButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/nameText"
-        android:layout_below="@+id/heightText"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/coustard"
-        android:text="Conferma" /> -->
+    <!-- <Button
+         android:id="@+id/confirmButton"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignEnd="@+id/nameText"
+         android:layout_below="@+id/heightText"
+         android:layout_marginTop="12dp"
+         android:fontFamily="@font/coustard"
+         android:text="Conferma" /> -->
 
     <com.dd.processbutton.iml.ActionProcessButton
         android:id="@+id/btnSignIn"
@@ -209,14 +211,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/coustard"
-        android:text="Confirm"
+        android:text="Conferma"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         custom:pb_colorComplete="#009688"
         custom:pb_colorNormal="@color/colorPrimary"
         custom:pb_colorPressed="@color/colorPrimaryDark"
         custom:pb_colorProgress="@color/purple_progress"
-        custom:pb_textComplete="Success"
-        custom:pb_textProgress="Uploading" />
+        custom:pb_textComplete="Completato"
+        custom:pb_textProgress="Caricando" />
 
 </RelativeLayout>

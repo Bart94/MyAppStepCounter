@@ -14,6 +14,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 
+import java.lang.reflect.Array;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -51,13 +52,21 @@ public class FirebaseDb {
 
         setNode(mRef, p);
 
-        /*int i;
-        for (i = 1; i < 10; i++) {
-            String idr = hashId(randomString());
+        /*String[] array_name = new String[]{"Carlo", "Antonio", "Fabiana", "Giovanna", "Harry", "Paola",
+                "Tom", "Wendie", "Mandie", "Shenna", "Glen", "Isiah", "Mitchel", "Steve", "Todd", "Benedetto",
+                "Valentina", "Elvira", "Elvis", "Sandro", "Roberta", "Vincenzo", "Michele"};
+
+        String[] array_surname = new String[]{"Rodriguez", "Cage", "Rossi", "Marsee", "Cales", "Nardi",
+                "Santoro", "Vitale", "Kamps", "Hadnot", "Glen", "Ferrari", "Russo", "Capasso", "Casillas", "Caruso",
+                "Garcia", "Sanchez", "Gomez", "Osuna", "Barbieri", "Perez", "Bianco"};
+
+        int i;
+        for (i = 1; i < 23; i++) {
+            String idr = hashId(array_name[i] + array_surname[i]);
             mRef.child("users").child(idr).child("delta").setValue(randomNumber(-300,600));
-            mRef.child("users").child(idr).child("monstep").setValue(randomNumber(30000,60000));
-            mRef.child("users").child(idr).child("nome").setValue(randomString());
-            mRef.child("users").child(idr).child("cognome").setValue(randomString());
+            mRef.child("users").child(idr).child("monstep").setValue(randomNumber(30000,100000));
+            mRef.child("users").child(idr).child("nome").setValue(array_name[i]);
+            mRef.child("users").child(idr).child("cognome").setValue(array_surname[i]);
             mRef.child("users").child(idr).child("eta").setValue(randomNumber(25, 115));
             mRef.child("users").child(idr).child("peso").setValue(randomNumber(50, 215));
             mRef.child("users").child(idr).child("altezza").setValue(randomNumber(135, 230));
@@ -233,7 +242,7 @@ public class FirebaseDb {
         mRef.child("users").child(id).child("cognome").setValue(p.getSurname());
         mRef.child("users").child(id).child("sesso").setValue(p.getSex());
         mRef.child("users").child(id).child("eta").setValue(Integer.parseInt(get_age(p.getBirth())));
-        mRef.child("users").child(id).child("peso").setValue(Integer.parseInt(p.getWeight()));
+        mRef.child("users").child(id).child("peso").setValue(Float.parseFloat(p.getWeight()));
         mRef.child("users").child(id).child("altezza").setValue(Integer.parseInt(p.getHeight()));
         mRef.child("users").child(id).child("passi").setValue(Integer.parseInt(p.getSteps()));
     }
