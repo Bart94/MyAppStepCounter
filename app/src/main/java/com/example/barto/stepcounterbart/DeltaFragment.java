@@ -1,6 +1,7 @@
 package com.example.barto.stepcounterbart;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +33,14 @@ public class DeltaFragment extends Fragment {
         TextView title = v.findViewById(R.id.textViewThird);
         listView = v.findViewById(R.id.listViewThird);
         textView = v.findViewById(R.id.positionThird);
+
+        ImageView img = (ImageView) v.findViewById(R.id.arrow_delta);
+        img.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), MainActivity.class);
+                startActivity(i);
+            }
+        });
 
         title.setText("Variazione rispetto a Ieri");
 

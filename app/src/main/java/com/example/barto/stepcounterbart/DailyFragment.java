@@ -1,6 +1,7 @@
 package com.example.barto.stepcounterbart;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +34,14 @@ public class DailyFragment extends Fragment {
         title = v.findViewById(R.id.textViewFirst);
         listView = v.findViewById(R.id.listViewFirst);
         textView = v.findViewById(R.id.positionFirst);
+
+        ImageView img = (ImageView) v.findViewById(R.id.arrow_daily);
+        img.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), MainActivity.class);
+                startActivity(i);
+            }
+        });
 
         mSwipeRefreshLayout = v.findViewById(R.id.swiperefreshdailyfragment);
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
