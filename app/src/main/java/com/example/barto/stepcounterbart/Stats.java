@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -45,7 +46,7 @@ public class Stats extends AppCompatActivity implements DatePickerDialog.OnDateS
 
         Spinner spinner = findViewById(R.id.spinnerId);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, new String[]{"7 giorni", " 30 giorni", "Personalizzata"});
+                android.R.layout.simple_spinner_item, new String[]{"Oggi", "7 giorni", " 30 giorni", "Personalizzata"});
 
         spinner.setAdapter(arrayAdapter);
 
@@ -60,15 +61,28 @@ public class Stats extends AppCompatActivity implements DatePickerDialog.OnDateS
             public void onItemSelected(AdapterView<?> parent, View view, final int position, long id) {
                 if (position == 0) {
                     setInvisible();
+                    Handler h = new Handler();
+                    h.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            setDailySteps();
+                            graph.setVisibility(View.VISIBLE);
+                        }
+                    }, 1000);
+                    /*;setDailySteps();
+                    graph.setVisibility(View.VISIBLE);*/
+                }
+                if (position == 1) {
+                    setInvisible();
                     setWeekStep();
                     graph.setVisibility(View.VISIBLE);
                 }
-                if (position == 1) {
+                if (position == 2) {
                     setInvisible();
                     setMonthStep();
                     graph.setVisibility(View.VISIBLE);
                 }
-                if (position == 2) {
+                if (position == 3) {
                     setVisible();
                     graph.setVisibility(View.INVISIBLE);
 
@@ -168,7 +182,7 @@ public class Stats extends AppCompatActivity implements DatePickerDialog.OnDateS
         graph.addSeries(series);
         graph.getGridLabelRenderer().setNumVerticalLabels(6);
         if (array.size() > 15) {
-            graph.getGridLabelRenderer().setNumHorizontalLabels((array.size()/2)+2);
+            graph.getGridLabelRenderer().setNumHorizontalLabels((array.size() / 2) + 2);
             graph.getGridLabelRenderer().setHorizontalLabelsAngle(90);
         } else {
             graph.getGridLabelRenderer().setNumHorizontalLabels(array.size());
@@ -224,6 +238,52 @@ public class Stats extends AppCompatActivity implements DatePickerDialog.OnDateS
         } else {
             graph.getGridLabelRenderer().setNumHorizontalLabels(array.size());
         }
+        series.setDrawDataPoints(true);
+        series.setAnimated(true);
+        graph.addSeries(series);
+        series.setDrawBackground(true);
+        series.setDataPointsRadius(20);
+        series.setOnDataPointTapListener(new OnDataPointTapListener() {
+            @Override
+            public void onTap(Series series, DataPointInterface dataPoint) {
+                Toast.makeText(Stats.this, "Passi: " + dataPoint.getY(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void setDailySteps() {
+        new StepCounter(this).stepsThisDay();
+        String s = "dailySteps";
+
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, 0);
+        Date date = cal.getTime();
+        int hour = cal.get(Calendar.HOUR_OF_DAY);
+        ArrayList<String> array = retrieveArray(s);
+        DataPoint[] dataPoints = new DataPoint[array.size()];
+
+        for (int i = 0; i < array.size(); i++) {
+            dataPoints[i] = new DataPoint(hour - array.size() + i + 1, Integer.parseInt(array.get(i)));
+        }
+
+        graph = findViewById(R.id.graph);
+        graph.removeAllSeries();
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(dataPoints);
+
+
+        SimpleDateFormat format1 = new SimpleDateFormat("dd-MM-yyyy");
+        String date1 = format1.format(date);
+
+
+        graph.setTitle("Oggi: " + date1);
+        graph.addSeries(series);
+        graph.getGridLabelRenderer().setNumVerticalLabels(6);
+        if (array.size() > 15) {
+            graph.getGridLabelRenderer().setNumHorizontalLabels(16);
+        } else {
+            graph.getGridLabelRenderer().setNumHorizontalLabels(array.size());
+        }
+
         series.setDrawDataPoints(true);
         series.setAnimated(true);
         graph.addSeries(series);

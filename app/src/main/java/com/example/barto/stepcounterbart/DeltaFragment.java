@@ -34,7 +34,7 @@ public class DeltaFragment extends Fragment {
         listView = v.findViewById(R.id.listViewThird);
         textView = v.findViewById(R.id.positionThird);
 
-        ImageView img = (ImageView) v.findViewById(R.id.arrow_delta);
+        ImageView img = v.findViewById(R.id.arrow_delta);
         img.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent i = new Intent(getContext(), MainActivity.class);

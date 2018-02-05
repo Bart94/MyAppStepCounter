@@ -36,9 +36,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Rank"
-            android:parentActivityName=".MainActivity" />
-        <activity
             android:name=".Settings"
             android:parentActivityName=".MainActivity" />
         <activity

@@ -35,7 +35,7 @@ public class DailyFragment extends Fragment {
         listView = v.findViewById(R.id.listViewFirst);
         textView = v.findViewById(R.id.positionFirst);
 
-        ImageView img = (ImageView) v.findViewById(R.id.arrow_daily);
+        ImageView img = v.findViewById(R.id.arrow_daily);
         img.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent i = new Intent(getContext(), MainActivity.class);

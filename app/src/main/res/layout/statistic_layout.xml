@@ -53,21 +53,23 @@
 
     <EditText
         android:id="@+id/editTextStartDate"
+        android:focusable="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/graph"
         android:layout_below="@+id/startDate"
         android:ems="10"
-        android:inputType="textPersonName|number" />
+        android:inputType="none" />
 
     <EditText
         android:id="@+id/editTextEndDate"
+        android:focusable="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/endDate"
         android:layout_below="@+id/endDate"
         android:ems="10"
-        android:inputType="number" />
+        android:inputType="none" />
 
     <Button
         android:id="@+id/buttonstats"

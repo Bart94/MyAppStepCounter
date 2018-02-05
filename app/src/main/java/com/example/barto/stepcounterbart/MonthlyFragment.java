@@ -34,7 +34,7 @@ public class MonthlyFragment extends Fragment {
         listView = v.findViewById(R.id.listViewSec);
         textView = v.findViewById(R.id.positionSec);
 
-        ImageView img = (ImageView) v.findViewById(R.id.arrow_month);
+        ImageView img = v.findViewById(R.id.arrow_month);
         img.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent i = new Intent(getContext(), MainActivity.class);

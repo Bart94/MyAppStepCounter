@@ -22,7 +22,7 @@ public class RankHandler extends FragmentActivity {
         viewpager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         viewpager.setPageTransformer(true, new CubeOutTransformer());
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabDots);
+        TabLayout tabLayout = findViewById(R.id.tabDots);
         tabLayout.setupWithViewPager(viewpager, true);
     }
 
