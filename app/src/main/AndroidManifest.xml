@@ -40,7 +40,6 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Settings"
-            android:windowSoftInputMode="stateHidden|adjustResize"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Stats"

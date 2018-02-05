@@ -333,6 +333,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         animationText(text);
 
         if (steps.equalsIgnoreCase("0")) {
+            SharedPreferences tmpPerson = getSharedPreferences("Temp", MODE_PRIVATE);
+            tmpPerson.edit().clear().apply();
             text.setText(String.valueOf(steps));
         } else {
             text.setText(String.valueOf(steps));
@@ -341,7 +343,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         //TimeElapsed
-        long millis = Integer.parseInt(steps) * 746;
+        long millis = (Integer.parseInt(steps) * 746) + 60000;
         @SuppressLint("DefaultLocale")
         String hms = String.valueOf(TimeUnit.MILLISECONDS.toMinutes(millis));
         TextView time = findViewById(R.id.elapsed_time);
@@ -350,7 +352,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Km walked
         TextView text1 = findViewById(R.id.chilometers);
-        double km = Integer.parseInt(steps) * 0.27 / 1000;
+        double km = Integer.parseInt(steps) * 0.74 / 1000;
         float result = (float) (Math.ceil(km * Math.pow(10, 2)) / Math.pow(10, 2));
         animationText(text1);
         text1.setText(String.valueOf(result));
@@ -613,4 +615,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mCircleView.setValueAnimated(Float.parseFloat(mPref1.getString("step", "0")));
         mCircleView.setDirection(Direction.CW);
     }
+
 }

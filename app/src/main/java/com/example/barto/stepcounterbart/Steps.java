@@ -65,7 +65,7 @@ public class Steps extends Service {
         t.schedule(new TimerTask() {
             @Override
             public void run() {
-                isNewDay();
+                //isNewDay();
                 PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
                 while (!pm.isInteractive()) {
                     try {
@@ -204,7 +204,7 @@ public class Steps extends Service {
                 .build();
     }
 
-    public void isNewDay() {
+   /* public void isNewDay() {
         Calendar c = Calendar.getInstance();
         int hours = c.get(Calendar.HOUR_OF_DAY);
         //Log.e("Hours", String.valueOf(hours));
@@ -214,6 +214,6 @@ public class Steps extends Service {
             SharedPreferences tmpPerson = getSharedPreferences("Temp", MODE_PRIVATE);
             tmpPerson.edit().clear().apply();
         }
-    }
+    }*/
 
 }

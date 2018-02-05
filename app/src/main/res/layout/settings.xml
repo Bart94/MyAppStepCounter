@@ -3,7 +3,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:id="@+id/relativeLayout"
-    android:layout_alignParentBottom="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -144,7 +143,7 @@
         android:layout_toEndOf="@+id/Height"
         android:ems="10"
         android:fontFamily="@font/coustard"
-        android:inputType="number|numberSigned|numberDecimal"
+        android:inputType="number|numberDecimal"
         android:maxLength="5" />
 
     <TextView
@@ -211,14 +210,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/coustard"
-        android:text="Conferma"
+        android:text="Confirm"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         custom:pb_colorComplete="#009688"
         custom:pb_colorNormal="@color/colorPrimary"
         custom:pb_colorPressed="@color/colorPrimaryDark"
         custom:pb_colorProgress="@color/purple_progress"
-        custom:pb_textComplete="Completato"
-        custom:pb_textProgress="Caricando" />
+        custom:pb_textComplete="Success"
+        custom:pb_textProgress="Uploading" />
 
 </RelativeLayout>
