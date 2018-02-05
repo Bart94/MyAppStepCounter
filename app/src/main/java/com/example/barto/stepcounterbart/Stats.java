@@ -46,7 +46,7 @@ public class Stats extends AppCompatActivity implements DatePickerDialog.OnDateS
 
         Spinner spinner = findViewById(R.id.spinnerId);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, new String[]{"Oggi", "7 giorni", " 30 giorni", "Personalizzata"});
+                android.R.layout.simple_spinner_item, new String[]{"7 giorni", " 30 giorni", "Personalizzata"});
 
         spinner.setAdapter(arrayAdapter);
 
@@ -61,28 +61,15 @@ public class Stats extends AppCompatActivity implements DatePickerDialog.OnDateS
             public void onItemSelected(AdapterView<?> parent, View view, final int position, long id) {
                 if (position == 0) {
                     setInvisible();
-                    Handler h = new Handler();
-                    h.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            setDailySteps();
-                            graph.setVisibility(View.VISIBLE);
-                        }
-                    }, 1000);
-                    /*;setDailySteps();
-                    graph.setVisibility(View.VISIBLE);*/
-                }
-                if (position == 1) {
-                    setInvisible();
                     setWeekStep();
                     graph.setVisibility(View.VISIBLE);
                 }
-                if (position == 2) {
+                if (position == 1) {
                     setInvisible();
                     setMonthStep();
                     graph.setVisibility(View.VISIBLE);
                 }
-                if (position == 3) {
+                if (position == 2) {
                     setVisible();
                     graph.setVisibility(View.INVISIBLE);
 
@@ -251,7 +238,7 @@ public class Stats extends AppCompatActivity implements DatePickerDialog.OnDateS
         });
     }
 
-    public void setDailySteps() {
+    /*public void setDailySteps() {
         new StepCounter(this).stepsThisDay();
         String s = "dailySteps";
 
@@ -295,7 +282,7 @@ public class Stats extends AppCompatActivity implements DatePickerDialog.OnDateS
                 Toast.makeText(Stats.this, "Passi: " + dataPoint.getY(), Toast.LENGTH_SHORT).show();
             }
         });
-    }
+    }*/
 
     public void setWeekStep() {
         new StepCounter(this).stepsThisWeek();

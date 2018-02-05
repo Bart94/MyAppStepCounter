@@ -50,11 +50,11 @@
         android:id="@+id/elapsed_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/imageView3"
+        android:layout_alignEnd="@+id/textView4"
         android:layout_below="@+id/imageView3"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/coustard"
-        android:text="..."
+        android:text="100"
         android:textAlignment="center"
         android:textSize="18sp" />
 
@@ -62,9 +62,9 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_alignStart="@+id/imageView4"
+        android:layout_alignBaseline="@+id/Km "
+        android:layout_alignBottom="@+id/Km "
+        android:layout_alignStart="@+id/calories"
         android:fontFamily="@font/coustard"
         android:text="Cal"
         android:textAlignment="center"
@@ -74,11 +74,10 @@
         android:id="@+id/calories"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/elapsed_time"
-        android:layout_alignBottom="@+id/elapsed_time"
+        android:layout_above="@+id/textView4"
         android:layout_alignStart="@+id/imageView4"
         android:fontFamily="@font/coustard"
-        android:text="..."
+        android:text="1396"
         android:textAlignment="textEnd"
         android:textSize="18sp" />
 
@@ -88,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView4"
         android:layout_alignBottom="@+id/textView4"
-        android:layout_alignStart="@+id/chilometers"
+        android:layout_alignStart="@+id/distance"
         android:fontFamily="@font/coustard"
         android:text="Km"
         android:textAlignment="center"
@@ -101,9 +100,10 @@
         android:layout_alignBaseline="@+id/calories"
         android:layout_alignBottom="@+id/calories"
         android:layout_alignStart="@+id/distance"
+        android:layout_marginStart="6dp"
         android:fontFamily="@font/coustard"
-        android:text="..."
-        android:textAlignment="textEnd"
+        android:text="10"
+        android:textAlignment="center"
         android:textSize="18sp" />
 
     <ImageView
@@ -121,7 +121,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/shoes"
-        android:layout_marginTop="35dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="32dp"
         android:layout_toStartOf="@+id/circleView"
         app:srcCompat="@drawable/time" />
 
@@ -129,8 +130,9 @@
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageView3"
-        android:layout_toEndOf="@+id/shoes"
+        android:layout_alignStart="@+id/step_update"
+        android:layout_alignTop="@+id/distance"
+        android:layout_marginStart="14dp"
         app:srcCompat="@drawable/calories" />
 
     <at.grabner.circleprogress.CircleProgressView
@@ -149,8 +151,8 @@
         android:id="@+id/distance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageView4"
-        android:layout_toEndOf="@+id/textView2"
+        android:layout_alignTop="@+id/imageView3"
+        android:layout_toEndOf="@+id/circleView"
         app:srcCompat="@drawable/distance" />
 
 </RelativeLayout>

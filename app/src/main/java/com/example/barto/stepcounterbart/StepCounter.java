@@ -197,7 +197,7 @@ public class StepCounter {
     }
 
     //Get steps from today
-    public void stepsThisDay() {
+    /*public void stepsThisDay() {
         mClient.connect();
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, 23);
@@ -243,7 +243,7 @@ public class StepCounter {
                 saveUpdateArray(array, "dailySteps");
             }
         });
-    }
+    }*/
 
     public void saveUpdateArray(ArrayList<String> array, String name) {
         SharedPreferences tmpArray = c.getSharedPreferences(name, MODE_PRIVATE);
