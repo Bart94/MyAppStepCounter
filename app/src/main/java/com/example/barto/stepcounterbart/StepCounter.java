@@ -58,6 +58,8 @@ public class StepCounter {
             public void onResult(@NonNull DailyTotalResult dailyTotalResult) {
                 int steps1;
                 if (dailyTotalResult.getTotal().getDataPoints().isEmpty()) {
+                    SharedPreferences map_locations = c.getSharedPreferences("Temp", MODE_PRIVATE);
+                    map_locations.edit().clear().apply();
                     steps1 = 0;
                 } else {
                     steps1 = dailyTotalResult.getTotal().getDataPoints().get(0).getValue(Field.FIELD_STEPS).asInt();
@@ -195,55 +197,6 @@ public class StepCounter {
             }
         });
     }
-
-    //Get steps from today
-    /*public void stepsThisDay() {
-        mClient.connect();
-        Calendar cal = Calendar.getInstance();
-        cal.set(Calendar.HOUR_OF_DAY, 23);
-        cal.set(Calendar.MINUTE, 59);
-        cal.set(Calendar.SECOND, 59);
-        cal.set(Calendar.MILLISECOND, 59);
-
-        long endTime = cal.getTimeInMillis();
-        cal.add(Calendar.DAY_OF_YEAR, -1);
-        long startTime = cal.getTimeInMillis();
-
-        DataSource ESTIMATED_STEP_DELTAS = new DataSource.Builder()
-                .setDataType(DataType.TYPE_STEP_COUNT_DELTA)
-                .setType(DataSource.TYPE_DERIVED)
-                .setStreamName("estimated_steps")
-                .setAppPackageName("com.google.android.gms")
-                .build();
-
-        //Check how many steps were walked and recorded today
-        DataReadRequest readRequest = new DataReadRequest.Builder()
-                .aggregate(ESTIMATED_STEP_DELTAS, DataType.AGGREGATE_STEP_COUNT_DELTA)
-                .bucketByTime(1, TimeUnit.HOURS)
-                .setTimeRange(startTime, endTime, TimeUnit.MILLISECONDS)
-                .build();
-
-        PendingResult<DataReadResult> result = Fitness.HistoryApi.readData(mClient, readRequest);
-        result.setResultCallback(new ResultCallback<DataReadResult>() {
-            @Override
-            public void onResult(@NonNull DataReadResult dataReadResult) {
-                ArrayList<String> array = new ArrayList<>();
-                for (Bucket bucket : dataReadResult.getBuckets()) {
-                    List<DataSet> dataSetx = bucket.getDataSets();
-                    for (DataSet dataSet : dataSetx) {
-                        if (dataSet.getDataType().getName().equals("com.google.step_count.delta")) {
-                            if (dataSet.getDataPoints().size() > 0) {
-                                // total steps
-                                array.add(String.valueOf(dataSet.getDataPoints().get(0).getValue(Field.FIELD_STEPS).asInt()));
-                                Log.e("daily",String.valueOf(dataSet.getDataPoints().get(0).getValue(Field.FIELD_STEPS).asInt()) );
-                            }
-                        }
-                    }
-                }
-                saveUpdateArray(array, "dailySteps");
-            }
-        });
-    }*/
 
     public void saveUpdateArray(ArrayList<String> array, String name) {
         SharedPreferences tmpArray = c.getSharedPreferences(name, MODE_PRIVATE);

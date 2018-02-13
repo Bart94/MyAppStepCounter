@@ -236,7 +236,7 @@ public class GpsService extends Service {
         return array;
     }
 
-    public void isNewDay() {
+    /*public void isNewDay() {
         Calendar c = Calendar.getInstance();
         int hours = c.get(Calendar.HOUR_OF_DAY);
         //Log.e("Hours", String.valueOf(hours));
@@ -246,7 +246,7 @@ public class GpsService extends Service {
             SharedPreferences tmpPerson = getSharedPreferences("Temp", MODE_PRIVATE);
             tmpPerson.edit().clear().apply();
         }
-    }
+    }*/
 
     public boolean CheckGpsStatus() {
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -257,7 +257,7 @@ public class GpsService extends Service {
         TimerTask timer = new TimerTask() {
             @Override
             public void run() {
-                isNewDay();
+                //isNewDay();
                 if (CheckGpsStatus()) {
 
                     if (ActivityCompat.checkSelfPermission(GpsService.this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(GpsService.this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {

@@ -3,6 +3,7 @@ package com.example.barto.stepcounterbart;
 import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentSender;
@@ -22,6 +23,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
@@ -333,8 +335,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         animationText(text);
 
         if (steps.equalsIgnoreCase("0")) {
-            SharedPreferences tmpPerson = getSharedPreferences("Temp", MODE_PRIVATE);
-            tmpPerson.edit().clear().apply();
             text.setText(String.valueOf(steps));
         } else {
             text.setText(String.valueOf(steps));

@@ -54,7 +54,7 @@
         android:layout_below="@+id/imageView3"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/coustard"
-        android:text="100"
+        android:text="..."
         android:textAlignment="center"
         android:textSize="18sp" />
 
@@ -77,7 +77,7 @@
         android:layout_above="@+id/textView4"
         android:layout_alignStart="@+id/imageView4"
         android:fontFamily="@font/coustard"
-        android:text="1396"
+        android:text="..."
         android:textAlignment="textEnd"
         android:textSize="18sp" />
 
@@ -102,7 +102,7 @@
         android:layout_alignStart="@+id/distance"
         android:layout_marginStart="6dp"
         android:fontFamily="@font/coustard"
-        android:text="10"
+        android:text="..."
         android:textAlignment="center"
         android:textSize="18sp" />
 

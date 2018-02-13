@@ -284,12 +284,14 @@ public class MapsActivity extends FragmentActivity implements
 
         List<LatLng> points = p.getList();
         gpsTrack.setPoints(points);
-        //Log.e("Tag", String.valueOf(points.size()));
-        MarkerOptions mp = new MarkerOptions();
-        LatLng last = new LatLng(points.get(points.size() - 1).latitude, points.get(points.size() - 1).longitude);
-        mp.position(last);
-        map.addMarker(mp);
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(last, 16));
+        //Log.e("SIZE", String.valueOf(points.size()));
+        if(points.size() != 0) {
+            MarkerOptions mp = new MarkerOptions();
+            LatLng last = new LatLng(points.get(points.size() - 1).latitude, points.get(points.size() - 1).longitude);
+            mp.position(last);
+            map.addMarker(mp);
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(last, 16));
+        }
     }
 
     public Position retrieveData() {

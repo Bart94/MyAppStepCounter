@@ -210,14 +210,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/coustard"
-        android:text="Confirm"
+        android:text="Conferma"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         custom:pb_colorComplete="#009688"
         custom:pb_colorNormal="@color/colorPrimary"
         custom:pb_colorPressed="@color/colorPrimaryDark"
         custom:pb_colorProgress="@color/purple_progress"
-        custom:pb_textComplete="Success"
-        custom:pb_textProgress="Uploading" />
+        custom:pb_textComplete="Completato"
+        custom:pb_textProgress="Caricando" />
 
 </RelativeLayout>
