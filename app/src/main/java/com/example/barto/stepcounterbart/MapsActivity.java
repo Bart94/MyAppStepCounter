@@ -115,7 +115,7 @@ public class MapsActivity extends FragmentActivity implements
                 if (location != null) {
                     // Logic to handle location object
                     LatLng myPosition = new LatLng(location.getLatitude(), location.getLongitude());
-                    map.addMarker(new MarkerOptions().position(myPosition).title("It's Me!"));
+                    map.addMarker(new MarkerOptions().position(myPosition).title("Sei qui!"));
                     map.animateCamera(CameraUpdateFactory.newLatLngZoom(myPosition, 15));
                 }
             }

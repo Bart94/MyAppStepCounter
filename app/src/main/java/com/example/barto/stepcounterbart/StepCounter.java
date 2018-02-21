@@ -63,6 +63,10 @@ public class StepCounter {
                     steps1 = 0;
                 } else {
                     steps1 = dailyTotalResult.getTotal().getDataPoints().get(0).getValue(Field.FIELD_STEPS).asInt();
+                    if(steps1 < 150){
+                        SharedPreferences map_locations = c.getSharedPreferences("Temp", MODE_PRIVATE);
+                        map_locations.edit().clear().apply();
+                    }
                 }
                 steps = String.valueOf(steps);
 
