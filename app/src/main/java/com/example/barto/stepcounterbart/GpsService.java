@@ -50,7 +50,7 @@ public class GpsService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         Timer t = new Timer();
-        t.schedule(looper(), 100, 1000 * 60);
+        t.schedule(looper(), 100, 1000 * 10);
         return START_STICKY;
     }
 
